@@ -1,4 +1,6 @@
-streamlit
 openai
 faiss-cpu
+streamlit
+tqdm
+sentence-transformers
 numpy
