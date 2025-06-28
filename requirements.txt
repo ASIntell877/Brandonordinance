@@ -1,0 +1,7 @@
+openai
+faiss-cpu
+streamlit
+tqdm
+sentence-transformers
+numpy
+pymupdf
