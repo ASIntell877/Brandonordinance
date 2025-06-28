@@ -8,8 +8,8 @@ from openai import OpenAI
 from openai.types.chat import ChatCompletion
 
 # === Config ===
-INDEX_PATH = "data\index\ordinance_index.faiss"
-METADATA_PATH = "data\index\metadata.json"
+INDEX_PATH = "data/index/ordinance_index.faiss"
+METADATA_PATH = "data/index/metadata.json"
 EMBEDDING_MODEL = "text-embedding-ada-002"
 GPT_MODEL = "gpt-3.5-turbo"  # or "gpt-3.5-turbo" if you prefer cheaper
 MAX_CHUNKS = 5
