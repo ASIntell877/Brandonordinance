@@ -14,8 +14,14 @@ EMBEDDING_MODEL = "text-embedding-ada-002"
 GPT_MODEL = "gpt-3.5-turbo"  # or "gpt-3.5-turbo" if you prefer cheaper
 MAX_CHUNKS = 5
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+# Securely load your OpenAI API key from environment variables
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
+# Fail fast if the key isn't found
+if not OPENAI_API_KEY:
+    raise ValueError("Missing OpenAI API Key. Make sure it's set in Render's environment variables.")
+
+client = OpenAI(api_key=OPENAI_API_KEY)
 # === Load FAISS and metadata ===
 index = faiss.read_index(INDEX_PATH)
 with open(METADATA_PATH, 'r', encoding='utf-8') as f:
